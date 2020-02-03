@@ -25,6 +25,6 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 int my_pow(int b, unsigned int x);
-int *gen_arr(unsigned int size);
+unsigned int *gen_arr(unsigned int size);
 
 #endif
