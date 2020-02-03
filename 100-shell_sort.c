@@ -30,6 +30,7 @@ void shell_sort(int *array, size_t size)
 			array[k] = temp;
 		}
 
+		print_array(array, size);
 	}
 
 	free(gaps);
