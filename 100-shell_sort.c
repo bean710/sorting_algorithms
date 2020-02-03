@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * shell_sort - Uses the Knuth sequence to sort an array in place
@@ -67,18 +68,15 @@ unsigned int *gen_arr(unsigned int size)
 	unsigned int i, n_ele;
 
 	div_to = (size / 3) * 2 + 1;
-	div_to = div_to ? div_to : 1;
+	div_to += div_to % 3;
 
 	for (n_ele = 0; div_to > 0; ++n_ele)
-	{
-		div_to += div_to % 3;
 		div_to /= 3;
-	}
 
 	arr = malloc(sizeof(unsigned int) * n_ele + 1);
 
-	for (i = 0; i < n_ele - 1; ++i)
-		arr[i] = (my_pow(3, n_ele - i - 1) - 1) / 2;
+	for (i = 0; i < n_ele; ++i)
+		arr[i] = (my_pow(3, n_ele - i) - 1) / 2;
 
 	arr[i] = 0;
 
