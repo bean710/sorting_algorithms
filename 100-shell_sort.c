@@ -7,9 +7,9 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int *gaps;
-	unsigned int i;
-	int j, k, temp, gap;
+	unsigned int *gaps;
+	unsigned int i, j, k, gap;
+	int temp;
 
 	if (!array || size < 2)
 		return;
@@ -60,10 +60,10 @@ int my_pow(int b, unsigned int x)
  *
  * Return: A malloc'd array of the intervals
  */
-int *gen_arr(unsigned int size)
+unsigned int *gen_arr(unsigned int size)
 {
 	int div_to;
-	int *arr;
+	unsigned int *arr;
 	unsigned int i, n_ele;
 
 	div_to = (size / 3) * 2 + 1;
@@ -75,12 +75,12 @@ int *gen_arr(unsigned int size)
 		div_to /= 3;
 	}
 
-	arr = malloc(sizeof(int) * n_ele + 1);
+	arr = malloc(sizeof(unsigned int) * n_ele + 1);
 
 	for (i = 0; i < n_ele - 1; ++i)
 		arr[i] = (my_pow(3, n_ele - i - 1) - 1) / 2;
 
-	arr[i] = -1;
+	arr[i] = 0;
 
 	return (arr);
 }
