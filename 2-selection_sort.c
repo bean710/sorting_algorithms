@@ -7,7 +7,7 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	unsigned int i, j, s;
+	unsigned int i, j, s, og;
 	int tmp;
 
 	if (!array || size < 2)
@@ -16,6 +16,7 @@ void selection_sort(int *array, size_t size)
 	for (i = 0; i < size; ++i)
 	{
 		s = i;
+		og = s;
 		for (j = i; j < size; ++j)
 		{
 			if (array[j] < array[s])
@@ -24,6 +25,7 @@ void selection_sort(int *array, size_t size)
 		tmp = array[i];
 		array[i] = array[s];
 		array[s] = tmp;
-		print_array(array, size);
+		if (s != og)
+			print_array(array, size);
 	}
 }
