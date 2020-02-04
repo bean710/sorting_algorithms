@@ -26,5 +26,8 @@ void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 int my_pow(int b, unsigned int x);
 unsigned int *gen_arr(unsigned int size);
+void cocktail_sort_list(listint_t **list);
+void swap_forward(listint_t *node, listint_t **list);
+void swap_backward(listint_t *node, listint_t **list);
 
 #endif
