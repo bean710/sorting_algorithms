@@ -26,5 +26,6 @@ void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 int my_pow(int b, unsigned int x);
 unsigned int *gen_arr(unsigned int size);
+void quick_sort(int *array, size_t size);
 
 #endif
