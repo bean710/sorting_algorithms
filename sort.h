@@ -30,5 +30,6 @@ void cocktail_sort_list(listint_t **list);
 void swap_forward(listint_t *node, listint_t **list);
 void swap_backward(listint_t *node, listint_t **list);
 void quick_sort(int *array, size_t size);
+void counting_sort(int *array, size_t size);
 
 #endif
