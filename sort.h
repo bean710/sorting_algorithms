@@ -36,5 +36,7 @@ void quick_sort_extra(int *array, int lo, int hi, size_t size);
 int partition_hoare(int *array, int lo, int hi, size_t size);
 void quick_sort_extra_hoare(int *array, int lo, int hi, size_t size);
 void quick_sort_hoare(int *array, size_t size);
+unsigned int key(int val, int width);
+void radix_sort(int *array, size_t size);
 
 #endif
