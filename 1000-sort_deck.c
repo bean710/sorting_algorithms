@@ -8,6 +8,7 @@
 void sort_deck(deck_node_t **deck)
 {
 	deck_node_t *D[52];
+
 	to_array(*deck, D);
 	from_array(deck, D);
 }
