@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- *
+ * sort_deck - sorts a doubly linked list of card structs
+ * @deck: pointer the the head of the doubly linked list
  */
 void sort_deck(deck_node_t **deck)
 {
