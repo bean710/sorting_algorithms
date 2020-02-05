@@ -37,5 +37,6 @@ typedef struct deck_node_s
 } deck_node_t;
 
 void sort_deck(deck_node_t **deck);
+void from_array(deck_node_t **head, deck_node_t **array);
 
 #endif
