@@ -3,7 +3,9 @@
 #include <stdlib.h>
 
 /**
- *
+ * merge_sort - sorts an integer array in ascending order
+ * @array: the array to be sorted.
+ * @size: the size of the array
  */
 void merge_sort(int *array, size_t size)
 {
@@ -16,6 +18,13 @@ void merge_sort(int *array, size_t size)
 	free(buffer);
 }
 
+/**
+ * split - recursively chops up the array, sendss it to be mmerged.
+ * @buffer: a temp buffer to be used in merge
+ * @array: the array to be sorted
+ * @l: the leftest index
+ * @r: the rightest index
+ */
 void split(int *buffer, int *array, int l, int r)
 {
 	int m;
@@ -32,7 +41,12 @@ void split(int *buffer, int *array, int l, int r)
 }
 
 /**
- *
+ * merge - Puts a left and right array into sorted order.
+ * @buffer: a temp buffer to be used in merge
+ * @array: the array to be sorted
+ * @l: the leftest index
+ * @m: the middle index
+ * @r: the rightest index
  */
 void merge(int *buffer, int *array, int l, int m, int r)
 {
