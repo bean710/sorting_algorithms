@@ -18,11 +18,13 @@ void merge_sort(int *array, size_t size)
 
 void split(int *buffer, int *array, int l, int r)
 {
-	int m;
+	int m, diff;
 
 	if (l < r)
 	{
-		m = l + (r - l) / 2;
+		diff = r - l;
+		diff += diff % 2;
+		m = l + diff / 2;
 		
 		split(buffer, array, l, m - 1);
 		split(buffer, array, m, r);
@@ -43,7 +45,7 @@ void merge(int *buffer, int *array, int l, int m, int r)
 	
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(buffer + l, m);
+	print_array(buffer + l, m - l);
 	printf("[right]: ");
 	print_array(buffer + m, r - m + 1);
 	
