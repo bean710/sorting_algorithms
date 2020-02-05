@@ -43,7 +43,7 @@ void merge(int *buffer, int *array, int l, int m, int r)
 	
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(buffer + l, m - 1);
+	print_array(buffer + l, m);
 	printf("[right]: ");
 	print_array(buffer + m, r - m + 1);
 	
