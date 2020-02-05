@@ -42,6 +42,11 @@ void from_array(deck_node_t **head, deck_node_t **array)
 	}
 }
 
+/**
+ * get_val - returns a key value from a card_t
+ * @card: the card 
+ * Return: an index value (int)
+ */
 int get_val(const card_t *card)
 {
 	char vals[13] = {'A', '2', '3', '4', '5', '6', '7', '8', '9', '1',
