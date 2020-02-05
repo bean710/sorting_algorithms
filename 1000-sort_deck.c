@@ -12,6 +12,11 @@ void sort_deck(deck_node_t **deck)
 	from_array(deck, D);
 }
 
+/**
+ * from_array - rearranges a doubly linked list based on an array of ptrs.
+ * @head: pointer to the front of the list.
+ * @array: an array of pointers.
+ */
 void from_array(deck_node_t **head, deck_node_t **array)
 {
 	int i;
