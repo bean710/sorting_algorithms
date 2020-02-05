@@ -37,5 +37,7 @@ typedef struct deck_node_s
 } deck_node_t;
 
 void sort_deck(deck_node_t **deck);
+int get_val(const card_t *card)
+void to_array(deck_node_t *deck, deck_node_t *D)
 
 #endif
