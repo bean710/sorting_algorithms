@@ -6,7 +6,9 @@
  */
 void sort_deck(deck_node_t **deck)
 {
-
+	deck_node_t *D[52];
+	to_array(*deck, D);
+	from_array(deck, D);
 }
 
 void from_array(deck_node_t **head, deck_node_t **array)
@@ -27,8 +29,8 @@ void from_array(deck_node_t **head, deck_node_t **array)
 		}
 		if (i == 51)
 		{
-			array->prev = array[i - 1];
-			array->next = NULL;
+			array[i]->prev = array[i - 1];
+			array[i]->next = NULL;
 		}
 	}
 }
@@ -49,13 +51,13 @@ int get_val(const card_t *card)
 		}
 	}
 
-	return (v + card->type * 13);
+	return (v + card->kind * 13);
 }
 
-void to_array(deck_node_t *deck, deck_node_t *D)
+void to_array(deck_node_t *deck, deck_node_t **D)
 {
 	deck_node_t *node;
 
 	for (node = deck; node; node = node->next)
-		D[get_val(get_val(node->card))] = node;
+		D[get_val(node->card)] = node;
 }
