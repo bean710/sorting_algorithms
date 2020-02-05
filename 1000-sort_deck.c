@@ -2,15 +2,22 @@
 #include <stdlib.h>
 
 /**
- *
+ * sort_deck - sorts a doubly linked list of card structs
+ * @deck: pointer the the head of the doubly linked list
  */
 void sort_deck(deck_node_t **deck)
 {
 	deck_node_t *D[52];
+
 	to_array(*deck, D);
 	from_array(deck, D);
 }
 
+/**
+ * from_array - rearranges a doubly linked list based on an array of ptrs.
+ * @head: pointer to the front of the list.
+ * @array: an array of pointers.
+ */
 void from_array(deck_node_t **head, deck_node_t **array)
 {
 	int i;
@@ -36,6 +43,11 @@ void from_array(deck_node_t **head, deck_node_t **array)
 	}
 }
 
+/**
+ * get_val - returns a key value from a card_t
+ * @card: the card
+ * Return: an index value (int)
+ */
 int get_val(const card_t *card)
 {
 	char vals[13] = {'A', '2', '3', '4', '5', '6', '7', '8', '9', '1',
@@ -55,6 +67,11 @@ int get_val(const card_t *card)
 	return (v + card->kind * 13);
 }
 
+/**
+ * to_array - places a pointer in a specific part of an array
+ * @deck: pointer to the first node of a d. ll.
+ * @D: the array of pointers.
+ */
 void to_array(deck_node_t *deck, deck_node_t **D)
 {
 	deck_node_t *node;
