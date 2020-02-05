@@ -21,6 +21,7 @@ void from_array(deck_node_t **head, deck_node_t **array)
 		{
 			*head = array[i];
 			array[i]->prev = NULL;
+			array[i]->next = array[i + 1];
 		}
 		if (i < 51 && i != 0)
 		{
