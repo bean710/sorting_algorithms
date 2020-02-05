@@ -34,7 +34,7 @@ void split(int *buffer, int *array, int l, int r)
 		diff = r - l;
 		diff += diff % 2;
 		m = l + diff / 2;
-		
+
 		split(buffer, array, l, m - 1);
 		split(buffer, array, m, r);
 
@@ -56,17 +56,17 @@ void merge(int *buffer, int *array, int l, int m, int r)
 
 	for (i = l; i <= r; i++)
 		buffer[i] = array[i];
-	
+
 	printf("Merging...\n");
 	printf("[left]: ");
 	print_array(buffer + l, m - l);
 	printf("[right]: ");
 	print_array(buffer + m, r - m + 1);
-	
+
 	i = l;
 	j = m;
 	k = l;
-	
+
 	while (k <= r)
 	{
 		if (i < m && j <= r)
@@ -81,7 +81,7 @@ void merge(int *buffer, int *array, int l, int m, int r)
 		else
 			array[k++] = buffer[j++];
 	}
-	
+
 	printf("[Done]: ");
 	print_array(array + l, r - l + 1);
 }
