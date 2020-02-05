@@ -12,7 +12,7 @@ void merge_sort(int *array, size_t size)
 	buffer = malloc(sizeof(int) * size);
 	if (buffer == NULL)
 		exit(EXIT_FAILURE);
-	splitter(buffer, array, 0, size - 1);
+	split(buffer, array, 0, size - 1);
 	free(buffer);
 }
 
@@ -22,7 +22,7 @@ void split(int *buffer, int *array, int l, int r)
 
 	if (l < r)
 	{
-		m = l + (r - l) / 2
+		m = l + (r - l) / 2;
 		
 		split(buffer, array, l, m - 1);
 		split(buffer, array, m, r);
@@ -43,9 +43,9 @@ void merge(int *buffer, int *array, int l, int m, int r)
 	
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(buff + l, m - 1);
+	print_array(buffer + l, m - 1);
 	printf("[right]: ");
-	print_array(buff + m, r - m + 1);
+	print_array(buffer + m, r - m + 1);
 	
 	i = l;
 	j = m;
@@ -53,7 +53,7 @@ void merge(int *buffer, int *array, int l, int m, int r)
 	
 	while (k <= r)
 	{
-		if (i < m and j <= r)
+		if (i < m && j <= r)
 		{
 			if (buffer[i] > buffer[j])
 				array[k++] = buffer[j++];
