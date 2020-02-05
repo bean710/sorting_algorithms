@@ -41,5 +41,7 @@ void radix_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void merge_sort_divide(int *array, int l, int r, size_t size);
 void merge_sort_combine(int *array, int l, int m, int r, size_t size);
+void split(int *buffer, int *array, int l, int r);
+void merge(int *buffer, int *array, int l, int m, int r);
 
 #endif
