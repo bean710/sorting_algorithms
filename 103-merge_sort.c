@@ -40,4 +40,32 @@ void merge(int *buffer, int *array, int l, int m, int r)
 
 	for (i = l; i <= r; i++)
 		buffer[i] = array[i];
+	
+	printf("Merging...\n");
+	printf("[left]: ");
+	print_array(buff + l, m - 1);
+	printf("[right]: ");
+	print_array(buff + m, r - m + 1);
+	
+	i = l;
+	j = m;
+	k = l;
+	
+	while (k <= r)
+	{
+		if (i < m and j <= r)
+		{
+			if (buffer[i] > buffer[j])
+				array[k++] = buffer[j++];
+			else
+				array[k++] = buffer[i++];
+		}
+		else if (i < m)
+			array[k++] = buffer[i++];
+		else
+			array[k++] = buffer[j++];
+	}
+	
+	printf("[Done]: ");
+	print_array(array + l, r - l + 1);
 }
