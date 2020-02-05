@@ -66,6 +66,11 @@ int get_val(const card_t *card)
 	return (v + card->kind * 13);
 }
 
+/**
+ * to_array - places a pointer in a specific part of an array
+ * @deck: pointer to the first node of a d. ll.
+ * @D: the array of pointers.
+ */
 void to_array(deck_node_t *deck, deck_node_t **D)
 {
 	deck_node_t *node;
