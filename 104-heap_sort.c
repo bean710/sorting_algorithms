@@ -1,5 +1,10 @@
 #include "sort.h"
 
+/**
+ * heap_sort - sorts an int array in ascending order
+ * @array: the array to be sorted
+ * @size: the size of the array
+ */
 void heap_sort(int *array, size_t size)
 {
 	unsigned int i, temp;
@@ -14,12 +19,18 @@ void heap_sort(int *array, size_t size)
 	}
 }
 
+/**
+ * heapify - arranges an array in a sift-down heap sort manner
+ * @arr: the array to be sosrted.
+ * @size: the size of the array (the part to be sorted)
+ * @total: the total original array for printing
+ */
 void heapify(int *arr, unsigned int size, size_t total)
 {
 	int par, l_kid, r_kid;
 	int tmp;
 
-	par = (size - 2)/2;
+	par = (size - 2) / 2;
 
 	while (par >= 0)
 	{
