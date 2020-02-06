@@ -46,6 +46,7 @@ void heapify(int *arr, unsigned int size, size_t total)
 				tmp = arr[par];
 				arr[par] = arr[r_kid];
 				arr[r_kid] = tmp;
+				par++;
 				print_array(arr, total);
 			}
 			else
@@ -53,6 +54,7 @@ void heapify(int *arr, unsigned int size, size_t total)
 				tmp = arr[par];
 				arr[par] = arr[l_kid];
 				arr[l_kid] = tmp;
+				par++;
 				print_array(arr, total);
 			}
 		}
@@ -61,6 +63,7 @@ void heapify(int *arr, unsigned int size, size_t total)
 			tmp = arr[par];
 			arr[par] = arr[r_kid];
 			arr[r_kid] = tmp;
+			par++;
 			print_array(arr, total);
 		}
 		par--;
